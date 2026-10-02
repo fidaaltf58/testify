@@ -41,11 +41,11 @@ Everything below runs against **Hedera testnet** using the Hiero SDK (Hedera Tok
 ```bash
 git clone https://github.com/fidaaltf58/testify.git
 cd testify
-npm init -y
-npm install @hiero-ledger/sdk
+npm install
+cp .env.example .env
 ```
 
-Create a `.env` file in the project folder. **Never commit it.** End the file with a trailing newline so that appending to it later doesn't corrupt the last line.
+Fill in `.env` (it is git-ignored, so it never gets committed). End the file with a trailing newline so that appending to it later doesn't corrupt the last line.
 
 ```env
 HEDERA_ACCOUNT_ID=0.0.xxxxxxx        # operator / issuer account
@@ -78,7 +78,7 @@ node --env-file=.env verify-credential.js <tokenId> 1  # content + possession ch
 ## Run the app
 
 ```bash
-node --env-file=.env server.js
+npm start            # same as: node --env-file=.env server.js
 ```
 
 Open **<http://localhost:3000>**:
@@ -91,7 +91,7 @@ Open **<http://localhost:3000>**:
 ### Watch activity in real time
 
 ```bash
-node --env-file=.env listener.js     # subscribes to the topic and prints messages as they land
+npm run listen       # subscribes to the topic and prints messages as they land
 ```
 
 ### Log an outreach record

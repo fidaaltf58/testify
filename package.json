@@ -1,0 +1,17 @@
+{
+  "name": "testify",
+  "version": "1.0.0",
+  "description": "Verifiable, soulbound credentials and Learn2Earn tokens on Hedera testnet",
+  "private": true,
+  "main": "server.js",
+  "engines": {
+    "node": ">=20.6"
+  },
+  "scripts": {
+    "start": "node --env-file=.env server.js",
+    "listen": "node --env-file=.env listener.js"
+  },
+  "dependencies": {
+    "@hiero-ledger/sdk": "^2.89.1"
+  }
+}
